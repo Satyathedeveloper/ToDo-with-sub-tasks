@@ -272,6 +272,8 @@ export class AppComponent {
       this.userTimerHH = ""; this.userTimerMM = ""; this.userTimerSS = "";
     }
 
+
+    
   }
   setTime(key: any) {
     var temp: any;
