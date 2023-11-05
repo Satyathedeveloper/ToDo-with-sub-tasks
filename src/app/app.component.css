@@ -1,0 +1,397 @@
+input[type="number"] {
+
+    border: none;
+    width: 25px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"]:focus,
+input[type="date"]:focus {
+    outline: none;
+}
+
+#showinput,
+#showinputwdt{
+    display: none;
+}
+#shoinput input, #showinputwdt input{
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+#navcon {
+    float: left;
+    margin: 0px;
+    display: block;
+    width: 24%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(30deg, rgb(195, 130, 238), rgba(0, 94, 255, 0.348));
+}
+
+body {
+    margin: 0px;
+    color: white;
+    background-color: black;
+    height: 100vh;
+}
+
+#alertDiv {
+    backdrop-filter: brightness(30%);
+    width: 50vh;
+    height: 40vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(30deg, rgb(195, 130, 238), rgba(17, 98, 238, 0.862));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+#box {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    backdrop-filter: blur(10px) brightness(30%);
+    display: none;
+    scale: 1%;
+    transition: ease-in-out 0.8sec;
+}
+
+#taskCon {
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    /* width:; */
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+#buttuoncon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#buttuoncon button {
+    width: 75px;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+}
+
+#buttuoncon button:hover {
+    filter: brightness(90%);
+}
+
+#totaltaskcon {
+    background: linear-gradient(30deg, rgb(37, 90, 204), rgb(195, 130, 238));
+    width: 75%;
+    height: 86%;
+    margin-right: 1%;
+    float: right;
+    border-radius: 25px;
+    overflow: auto;
+}
+::-webkit-scrollbar{
+width: 0px;
+}
+#userimg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    /* padding: 20px; */
+    margin: 15px;
+    /* display: block; */
+    float: left;
+}
+
+#USerDetCon {
+    border: 3px solid white;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 10px;
+    width: 90%;
+}
+
+#USerDetCon :nth-last-child(2) {
+    margin-top: 30px;
+    font-size: larger;
+}
+
+#USerDetCon :nth-last-child(1) {
+    margin-top: 40px;
+
+}
+
+#navkeycon {
+    width: 90%;
+    /* border: 2px solid white; */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+#navkeycon div {
+    margin: 5px 0px 0px 25px;
+    font-size: 20px;
+    border: 2px solid white;
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#navkeycon div:hover {
+    margin-left: 40px;
+    cursor: pointer;
+
+}
+
+#navkeycon div:active {
+    color: tomato;
+}
+
+#searchtask,#taskinput {
+    width: 40%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    /* float: right; */
+    margin: 20px;
+}
+#showresult{
+    width:70%;
+    height: 70%;
+    background-color:white;
+    border-radius: 30px;
+    color: black;
+    font-size: 20px;
+    padding: 20px;;
+    overflow: auto;
+}
+#searchcon :last-child{
+    transform: translate(22.5%);
+}
+#searchcon :nth-last-child(2){
+    
+    transform: translate(65%);
+}
+#searchcon{
+    width: 60% ;
+    height: 70% ;
+    background-color: rgb(168, 166, 166);
+    position: absolute;
+   display: none;
+    top: 0;
+    left: 0;
+    transform: translate(50%,20%);
+    border-radius: 20px;
+}
+#searchcon img{
+    width:30px;
+    float: right;
+    margin: 10px;
+}
+#navclose {
+    position:absolute;
+    width:30px;
+    float:right;
+    top:25%;
+    right: 2%;
+    margin: 10px;
+    display: none;
+}
+#content,#cont{
+    margin:10%;
+    border: 3px solid black;
+    border-radius: 20px;
+    width:max-content;
+    height: max-content;
+    background-color: color-mix(in srgb-linear, violet 30%, skyblue 20%);
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    overflow: hidden;
+}
+#cont{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    flex-direction: row;
+
+}
+/* background-color: cadetblue; */
+#cont img{
+    float: right;
+}
+#parentTask{
+    margin: 4px 10px 4px 10px;
+    border: 5px solid rgb(23, 23, 24);
+    font-size: 18px;
+    padding: 7px;
+    border-radius: 5px ;
+}
+#subtaskofparenttask{
+    border: 2px solid rgb(225, 217, 242);
+    margin: 8px 10px 3px 30px;
+    border-radius: 5px;
+    padding: 7px;
+}
+#navkeycon div img{
+    width: 30px;
+    float: right;
+    filter: drop-shadow(1px 1px 1px white);
+}
+#more,#moree{
+    width: 25px;
+    margin:-1px 7px -5px 3px;
+    display: inline-block;
+    
+    border: 2px solid none;
+}
+#moresel{
+    float: right;
+    margin: -1px 10px 2px 0px;
+
+}
+
+#more:hover{
+    margin:-3px 7px -7px 3px;
+    height: 30px;
+    width: 30px;
+}
+.inputs{
+    width: 30px;
+    margin: 20px 10px -10px 10px;
+    /* background-color: aqua; */
+}
+#temp{
+    display: inline-block;
+    flex-direction:row-reverse;
+}
+#totaltimeinput ,#totalcat{
+        position: absolute;
+        margin: 20px 5px 10px 5px;
+        border: 3px solid ;
+        background-color: deepskyblue;
+        border-radius: 10px;
+}
+#totaltimeinput div, #totalcat input{
+    margin: 5px;
+    font-size: medium;
+    border: 2px solid;
+    padding: 5px;
+    background-color: rgb(177, 48, 232);
+    border-radius: 10px;
+    text-align: center;
+}
+#showinput input, #showinputwdt input{
+    margin:0px 3px 2px 3px;
+    border-radius: 3px;
+}
+#catagoryinput {
+    position: absolute;
+}
+#shoempty{
+    width: 30%;
+    top:0;
+    left:0;
+    transform: translate(120%,30%);
+
+}
+#profcon{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px) brightness(80%);
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+#inprofcon{
+    width: 50%;
+    height: 70%;
+    border-radius: 20px ;
+    background:linear-gradient( 135deg, rgb(7, 243, 239), rgba(98, 0, 255, 0.348));
+    border: 2px solid ;
+    box-shadow: 0 0 30px black;
+   background-color: white;
+   box-sizing: border-box;
+   position: absolute;
+
+}
+
+#closeimg{
+    width: 30px;
+    float: right;
+    margin: -10px -10px 0px 0px;
+}
+#gender{
+    /* width: 50px; */
+    margin: 50px 0px 0px 0px;
+    display:flex;
+    flex-direction: row;
+}
+#selgend{
+    display: flex;
+    flex-direction: row;
+}
+
+#profcon
+#selgend h1{
+margin: 30px;
+}
+#mr,#ms{
+    
+    width:80px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+}
+#mr:hover , #ms:hover {
+    background-color: mediumpurple;
+    transform: scale(0.8);
+  }
+  #nameinput{
+margin-left: 35%;
+height: 40px;
+width: 200px;
+border-radius: 10px;
+border-color: darkviolet;
+  }
+ #inprofcon button{
+    margin: 10px 0px 0px 44% ;
+    width: 100px;
+    height: 35px;
+    background-color:rgb(195, 130, 238);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+ }
+ #inprofcon button:hover{
+    scale: 1.1;
+    box-shadow:  3px 3px 6px black;
+ }

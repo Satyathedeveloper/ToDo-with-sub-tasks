@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="profcon" style="display: none;" >
+    <div id="inprofcon"><img src="/assets/icons/delete.png" alt="" draggable="false" id="closeimg">
+      <h1 style="text-align:center;"> Welcome to TODO</h1>
+    <div id="gender" style="justify-content: center;">
+      <div id="imgcon"> <img src="/assets/icons/emptyman.png" style="height: 100px;"></div>
+      
+      <div id="selgend"> <h1 (click)="genderconfirmation('Mr. ')" id="mr">Mr.</h1> 
+        <h1 (click)="genderconfirmation('Ms. ')" id="ms">Ms.</h1></div>
+      
+    </div>
+    <h3 style="text-align: center;">HEY <span>{{usergender}}</span>what's your name?</h3>
+    <input type="text" id="nameinput" placeholder="Your Name" [(ngModel)]="username" >
+    <br>
+  
+    <button (click)="validateName()">Submit !</button></div>
+  </div>
+
+
+  <div id="navcon">
+    <div id="USerDetCon">
+      <div id="userimg"></div>
+      <div>{{username}}</div>
+      <div (click)="showthediv('show')">Edit Profile</div>
+    </div>
+    <div id="navkeycon">
+      
+      <div (click)="createDiv()" (click)="changebg()">Your Tasks <img src="/assets/icons/hut1.png"></div>
+      <div (click)="searchanytask(null)" (click)="changebg()">Search <img src="/assets/icons/magnifying-glass.png"
+          style="width: 15px;"></div>
+      <div (click)="timedifffunction('upcoming')" (click)="changebg()">Upcoming Tasks <img
+          src="/assets/icons/upcoming.png" alt=""></div>
+      <div (click)="notimefunction()" (click)="changebg()">NO time Tasks <img src="/assets/icons/no-time.png"></div>
+      <div (click)="yourtasks('personal')" (click)="changebg()">Personal Category <img src="/assets/icons/person.png">
+      </div>
+      <div (click)="yourtasks('Work')" (click)="changebg()">Work Space Category <img src="/assets/icons/group.png">
+      </div>
+      <div (click)="youractivity()" (click)="changebg()">Your Activity <img src="/assets/icons/activity.png"></div>
+      <div (click)="todaysmotivation()" (click)="changebg()">Today's Motivation <img src="/assets/icons/motivation.png">
+      </div>
+      <div (click)="changebg()">Help / Support <img src="/assets/icons/contact-mail.png"></div>
+    </div>
+  </div>
+
+
+
+  <div id="searchcon"> <img src="/assets/icons/delete.png" (click)="searchanytask('close')">
+    <input type="text" placeholder="Search" id="searchtask" [(ngModel)]="searchtaskinput" autofocus
+      (input)="searchanytask(null)">
+
+    <div id="showresult"></div>
+  </div>
+  <input type="text" [(ngModel)]="userInput" id="taskinput" autofocus placeholder="Type your task HERE....">
+  <img id="foredit" src="/assets/icons/check.png" class="inputs" style="display:none;">
+
+
+  <div id="temp">
+    <img src="/assets/icons/sort.png" class="inputs" (click)="showcatagory()">
+    <div id="totalcat" style="display: none;">
+      <label>
+        <input type="radio" name="catagory" value="Personal">Personal</label>
+      <label>
+        <input type="radio" name="catagory" value="Work Or Team">Work Or Team</label>
+    </div>
+  </div>
+
+
+
+  <div id="temp">
+    <img src="/assets/icons/timer.png" class="inputs" (click)="toggleContent()">
+    <div id="totaltimeinput" style="display: none;">
+      <div id="userreqtime" (click)="displayTimeDiv('timer')">Timer<img src="/assets/icons/timer.png" id="more">
+        <div id="showinput">
+          <input type="number" placeholder="HH" class="timer" [(ngModel)]="userTimerHH">
+          <input type="number" placeholder="MM" class="timer" [(ngModel)]="userTimerMM">
+          <input type="number" placeholder="SS" class="timer" [(ngModel)]="userTimerSS">
+          <img src="/assets/icons/writing.png" id="more" alt="Done" (click)="alertTimeOrTask('parentTask','R',null)">
+        </div>
+      </div>
+      <div id="userreqtime" (click)="displayTimeDiv('time')">Time <img src="/assets/icons/calendar.png" id="more">
+        <div id="showinputwdt">
+          <input type="date" id="timee" style="border: none;margin-right:10px" [(ngModel)]="userTimeDt">
+          <input type="number" placeholder="HH" class="timee" [(ngModel)]="userTimeHH">
+          <input type="number" placeholder="MM" class="timee" [(ngModel)]="userTimeMM">
+          <input type="number" placeholder="SS" class="timee" [(ngModel)]="userTimeSS">
+          <img src="/assets/icons/writing.png" id="more" (click)="alertTimeOrTask('parentTask','F',null)">
+        </div>
+      </div>
+      <div (click)="alertTimeOrTask('parentTask',null,'noTime')">NO Timer <img src="/assets/icons/no-time.png"
+          id="more"></div>
+    </div>
+  </div>
+
+
+
+
+  <div id="box">
+    <div id="alertDiv">
+      <div id="taskCon"></div>
+      <div id="buttuoncon">
+        <button id="doneButton" (click)="donefunction(remindData[0])">Done</button>
+        <button id="del" (click)="del(remindData[0])">Delete </button>
+        <button (click)="remindmelater()">Snooze</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="totaltaskcon">
+    <img src="/assets/icons/no-task.png" id="shoempty" style="display:none;">
+    <div id="cont" style="display: none;">
+      <div id="content"></div>
+      <img src="/assets/icons/delete.png" id="navclose" style="display: none;">
+      <img src="/assets/icons/teamwork.png" style="width:42%;height:fit-content;">
+    </div>
+    <div id="parentTask" *ngFor="let task of navarray;">{{task[0]}}
+      <div id="moresel">
+        <img src="/assets/icons/delete (1).png" id="more" (click)="del(task[1])">
+        <img src="/assets/icons/check.png" (click)="donefunction(task[1])" id="more">
+        <img src="/assets/icons/more.png" (click)="edit(task[1])" id="more">
+      </div>
+    </div>
+    <div *ngFor="let xx of parentTask;let i=index" id="parentTask">
+      {{i+1}}) {{xx[0]}}
+      <div id="moresel">
+        <img src="/assets/icons/plus.png" id="more" (click)="alertTimeOrTask('subTask',xx[1],null)">
+        <img src="/assets/icons/no-time.png" (click)="alertTimeOrTask('subTask',xx[1],'noTime')" id="more">
+        <img src="/assets/icons/delete (1).png" id="more" (click)="del(xx[1])">
+        <img src="/assets/icons/check.png" (click)="donefunction(xx[1])" id="more">
+        <img src="/assets/icons/more.png" (click)="edit(xx[1])" id="more">
+      </div>
+      <div *ngFor="let x of subTasks[i] ; let j=index" id="subtaskofparenttask">{{i+1}}.{{j+1}}) {{x[0]}}
+
+        <div id="moresel">
+          <img src="/assets/icons/delete (1).png" id="more" (click)="del(x[1])">
+          <img src="/assets/icons/check.png" (click)="donefunction(x[1])" id="more">
+          <img src="/assets/icons/more.png" (click)="edit(x[1])" id="more">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
